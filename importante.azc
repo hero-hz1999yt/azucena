@@ -1,0 +1,219 @@
+#
+#  █████╗ ███████╗██╗   ██╗ ██████╗███████╗███╗   ██╗ █████╗
+# ██╔══██╗╚══███╔╝██║   ██║██╔════╝██╔════╝████╗  ██║██╔══██╗
+# ███████║  ███╔╝ ██║   ██║██║     █████╗  ██╔██╗ ██║███████║
+# ██╔══██║ ███╔╝  ██║   ██║██║     ██╔══╝  ██║╚██╗██║██╔══██║
+# ██║  ██║███████╗╚██████╔╝╚██████╗███████╗██║ ╚████║██║  ██║
+# ╚═╝  ╚═╝╚══════╝ ╚═════╝  ╚═════╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝
+# -----------------AUTHOR BY: HERO_HZ1999YT------------------
+# %%%%%%%%%%%%%[PARAMETROS COMPLETOS DE AZUCENA]%%%%%%%%%%%%%
+#
+# [LIBRERIAS NECESARIAS]
+# libnotify, python-gobject, tk, gtk3, python-gitpython, git
+#
+# [INSTALACION]
+# PARA HACER FUNCIONAR A AZUCENA CORRECTAMENTE DEBEMOS DE HACER ESTO
+# EJECUTA LOS SIGUIENTES COMANDOS:
+# ===================== INSTALACION DE DEPENDENCIAS =====================
+# ----------> ARCH LINUX Y DERIVADAS <----------
+# $ sudo pacman -S libnotify python-gobject tk python-gitpython git
+# ----------> UBUNTU Y DERIVADAS [EN PRUEBAS AUN] <----------
+# $ sudo apt install libnotify-dev python3-v-sim python3-tk python3-git git
+# ----------> FEDORA Y DERIVADAS <----------
+# $ sudo dnf install libnotify python-gobject python3-tkinter python3-GitPython git
+# ===================== DESCARGA Y INSTALACION DE AZUCENA =====================
+# $ cd /home/$USER/
+# $ mkdir /home/$USER/.config/autostart
+# $ git clone https://github.com/hero-hz1999yt/azucena.git
+# $ mv /home/$USER/azucena/azucena_autostart.desktop /home/$USER/.config/autostart/
+# $ mv /home/$USER/azucena /home/$USER/.azucena
+# $ echo "Exec=python3 /home/$USER/.azucena/azucena.py" >> /home/$USER/.config/autostart/azucena_autostart.desktop
+#
+# [DESINSTALACION]
+# SI AZUCENA NO TE GUSTO POR UNA U OTRA RAZON PARA DESINSTALARLA ES MUY SENSILLO
+# EJECUTA ESTOS COMANDOS:
+# ===================== DESINSTALACION Y BORRADO DE ARCHIVOS DE AZUCENA =====================
+# $ rm -r /home/$USER/.azucena /home/$USER/.config/autostart/azucena_autostart.desktop
+# ===================== DESINSTALACION DE DEPENDENCIAS(SI NO ESTAN EN USO) =====================
+# ----------> ARCH LINUX Y DERIVADAS <----------
+# $ sudo pacman -Rsn libnotify python-gobject tk python-gitpython git
+# ----------> UBUNTU Y DERIVADAS [EN PRUEBAS AUN] <----------
+# $ sudo apt remove libnotify-dev python3-v-sim python3-tk python3-git git
+# ----------> FEDORA Y DERIVADAS <----------
+# $ sudo dnf remove libnotify python-gobject python3-tkinter python3-GitPython git
+#
+# [PARAMETROS DE AZUCENA] //configuralos dentro del archivo:/home/user_name/.azucena/azucena.azc
+# // nota: si quieres hacer algun comentario en tu archivo de configuracion
+# // solo necesitas colocar este simbolo al inicio de la linea # y el script
+# // va a omitir esa linea.
+#
+# 1.-AZUCENA
+# ES EL APODO POR ASI DECIRLO QUE LE PONDRAS A TU AZUCENA, EJEMPLO:
+# AZUCENA="Chaparra Bonita"; // este es el formato correcto, el apodo debe de ir entre las comillas simples
+#
+# 2.-APARIENCIA
+# ES LO QUE AZUCENA MOSTRARA EN LA NOTIFICACION COMO ICONO, EXISTEN 4 APARIENCIAS
+# POR_DEFECTO, MI_AZUCENA, EMOTICONES, ZOMBIE, AZUCENA
+# // que es cada apariencia
+# POR_DEFECTO: esta apariencia muestra el icono por defecto de la notificacion
+# MI_AZUCENA:  esta apariencia muestra una imagen que tu coloques en la carpeta .azucena, el nombre debe de ser mi-azucena.png o mi-azucena.jpg
+# EMOTICONES:  esta apariencia muestra algun emoticon segun el estado de animo del mensaje que azucena muestre
+# ZOMBIE:      esta apariencia muestra un zombie jaja
+# AZUCENA:     esta apariencia muestra la verdadera apariencia de mi azucena
+# BIEN YA VIMOS QUE SON LAS APARIENCIAS DE AZUCENA AHORA VAMOS A VER UN EJEMPLO:
+# APARIENCIA=MI_AZUCENA; // este es el formato correcto, solo cambiamos la apariencia
+#
+# 3.-URGENCIA
+# ES LA URGENCIA QUE AZUCENA TOMARA AL MOSTRAR LA NOTIFICACION, EXISTEN 3 URGENCIAS
+# CRITICA, NORMAL, BAJA
+# // nota: si colocas la notificacion en urgencia critica, el tiempo en ocultar se ignorara
+# // y la notificacion no se va a ocultar, solamente lo ara si tu la cierras
+# BIEN AHORA QUE VIMOS CUALES ERAN LAS URGENCIAS DE LA NOTIFICACION VEAMOS UN EJEMPLO:
+# URGENCIA=CRITICA; // este es el formato correcto, solo cambia la urgencia por la que tu desees
+#
+# 4.-MOSTRAR
+# ES EL TIEMPO QUE AZUCENA TARDARA EN MOSTRARTE LA NOTIFICACION
+# BIEN AHORA VAMOS A VER UN EJEMPLO:
+# MOSTRAR=5; // este parametro se ajusta en segundos ejemplo 30 segundos, y solo recibe un valor entero ejemplo 1, 2, 3, 4, etc
+#
+# 5.-OCULTAR
+# ES EL TIEMPO QUE AZUCENA TARDARA EN OCULTAR LA NOTIFICACION // esto se anula si la notificacion es de urgencia critica
+# BIEN AHORA VAMOS A VER UN EJEMPLO:
+# OCULTAR=30; // este parametro se ajusta en segundos ejemplo 50 segundos, y solo recibe un valor entero ejemplo 1, 2, 3, 4, etc
+#
+# 6.-APODO
+# SON LOS APODOS QUE AZUCENA TE DIRA
+# BIEN VAMOS CON UN EJEMPLO:
+# APODO="mi principe";          // apodo 1
+# APODO="mi amor";              // apodo 2
+# APODO="mi linuxero bonito";   // apodo 3
+# // como vemos este parametro se ajusta en lista, y podemos poner los apodos que queramos
+# // solamente tenemos que cambiar el valor del parametro y azucena nos mostrara alguno de ellos
+# // mas o menos es seudoaleatorio, y pues ya azucena lo muestra en la notificacion jeje
+#
+# // lista de estados de azucena, lo dejo por aqui por que abajo lo vamos a necesitar xd
+# // son los estados de animo, estos los usa para saber que emoticon mostrarte segun el
+# // estado de animo de tu mensaje
+# FELIZ, ENOJADA, SOÑOLIENTA, CELOSA, RISUEÑA, TRISTE, ENAMORADA, CALIENTE, ASUSTADA
+#
+# 7.-MMENSAJE
+# ESTE PARAMETRO ES PARA INGRESAR LOS MENSAJES, PERO ESTOS SOLO SON PARA MOSTRARCE EN LA MAÑANA
+# POR ESO SU NOMBRE MMENSAJE, LA PRIMERA M ES POR MAÑANA, VAMOS A VER UN EJEMPLO:
+# MMENSAJE-FELIZ="hola mundo";                                  // mensaje 1
+# MMENSAJE-ENOJADA="yo quiero usar arch linux no fedora";       // mensaje 2
+# MMENSAJE-CELOSA="por que andabas viendo videos sobre windous"; // mensaje 3 jaja ya se que asi no se escribe pero luego me demandan :v
+# // este parametro se ajusta igual que los apodos, es en forma de lista repitiendo el parametro
+# // lo unico que cambia es el estado de animo, este debe de ir si o si para que azucena sepa
+# // que emoticono mostrar "si no es IA, en un futuro se va a agregar pero aun no la tiene"
+# // la lista de estados de animo esta arriba, y esta es la estructura correcta para ajustar este parametro
+#
+# 8.-TMENSAJE
+# ESTE PARAMETRO ES PARA INGRESAR LOS MENSAJES, PERO ESTOS SOLO SON PARA MOSTRARCE EN LA TARDE
+# POR ESO SU NOMBRE TMENSAJE, LA PRIMERA T ES POR TARDE, VAMOS A VER UN EJEMPLO:
+# TMENSAJE-RISUEÑA="que crees, me hiba a caer con la targeta de video";         // mensaje 1
+# TMENSAJE-ASUSTADA="vi que andabas creando otra particion en ntfs, por que ?"; // mensaje 2
+# TMENSAJE-SOÑOLIENTA="ya jugaste mucho al mainkra, ya apagame para descansar"; // mensaje 3
+# // este parametro se ajusta igual que los apodos, es en forma de lista repitiendo el parametro
+# // lo unico que cambia es el estado de animo, este debe de ir si o si para que azucena sepa
+# // que emoticono mostrar "si no es IA, en un futuro se va a agregar pero aun no la tiene"
+# // la lista de estados de animo esta arriba, y esta es la estructura correcta para ajustar este parametro
+#
+# 9.-NMENSAJE
+# ESTE PARAMETRO ES PARA INGRESAR LOS MENSAJES, PERO ESTOS SOLO SON PARA MOSTRARCE EN LA NOCHE
+# POR ESO SU NOMBRE NMENSAJE, LA PRIMERA N ES POR NOCHE, VAMOS A VER UN EJEMPLO:
+# NMENSAJE-CALIENTE="oye...., ya checa la temperatura del cpu 7w7";     // mensaje 1
+# NMENSAJE-TRISTE="por que ayer me desinstalaste, ya no me quieres ?";  // mensaje 2
+# NMENSAJE-ENAMORADA="oye, te quiero mucho";                            // mensaje 3
+# // este parametro se ajusta igual que los apodos, es en forma de lista repitiendo el parametro
+# // lo unico que cambia es el estado de animo, este debe de ir si o si para que azucena sepa
+# // que emoticono mostrar "si no es IA, en un futuro se va a agregar pero aun no la tiene"
+# // la lista de estados de animo esta arriba, y esta es la estructura correcta para ajustar este parametro
+#
+# 10.-MAMENSAJE
+# ESTE PARAMETRO ES PARA INGRESAR LOS MENSAJES, PERO ESTOS SOLO SON PARA MOSTRARCE EN LA MADRUGADA
+# POR ESO SU NOMBRE MAMENSAJE, LAS PRIMERAS LETRAS MA ES POR MADRUGADA, VAMOS A VER UN EJEMPLO:
+# MAMENSAJE-FELIZ="oye, ya me compraste ese teclado que tanto queria";          // mensaje 1
+# MAMENSAJE-CELOSA="por que sigues despierto?";                                 // mensaje 2
+# MAMENSAJE-SOÑOLIENTA="oye, ya es tarde vamos a dormir bonito";                // mensaje 3
+# // este parametro se ajusta igual que los apodos, es en forma de lista repitiendo el parametro
+# // lo unico que cambia es el estado de animo, este debe de ir si o si para que azucena sepa
+# // que emoticono mostrar "si no es IA, en un futuro se va a agregar pero aun no la tiene"
+# // la lista de estados de animo esta arriba, y esta es la estructura correcta para ajustar este parametro
+#
+# 11.-IDIOMA
+# AZUCENA CUENTA CON DOS IDIOMAS POR EL MOMENTO: ESPAÑOL MEXICANO Y INGLES ESTADOS UNIDOS
+# ESTE PARAMETRO ES PARA QUE AZUCENA HABLE INGLES O ESPAÑOL JEJE, VAMOS A VER UN EJEMPLO:
+# // idiomas
+# ES_MX, EN_US
+# IDIOMA=ES_MX;// este comando establece a azucena en español mexicano
+# IDIOMA=EN_US;// este otro ejemplo establece a azucena en ingles estados unidos
+#
+# 12.-CATEGORIA
+# ESTE PARAMETRO ES LA CATEGORIA DE LA NOTIFICACION, COMO EL SISTEMA LA VA A RECONOCER
+# UN EJEMPLO PARA AJUSTAR ESTE PARAMETRO ES ESTE:
+# CATEGORIA=device; // el formato de ajuste es asi, despues del simbolo = va la categoria
+# // les dejo la lista de categorias de notificaciones en linux, esta fue impartida por
+# // debian, con todos los datos y descripcion de cada categoria
+# +------------------------------------------------------------------------+
+# |          Type          |                  Description                  |
+# |------------------------+-----------------------------------------------|
+# | "device"               |   A generic device-related notification that  |
+# |                        | doesn't fit into any other category.          |
+# |------------------------+-----------------------------------------------|
+# | "device.added"         | A device, such as a USB device, was added to  |
+# |                        | the system.                                   |
+# |------------------------+-----------------------------------------------|
+# | "device.error"         | A device had some kind of error.              |
+# |------------------------+-----------------------------------------------|
+# | "device.removed"       |   A device, such as a USB device, was removed |
+# |                        | from the system.                              |
+# |------------------------+-----------------------------------------------|
+# | "email"                |   A generic e-mail-related notification that  |
+# |                        | doesn't fit into any other category.          |
+# |------------------------+-----------------------------------------------|
+# | "email.arrived"        | A new e-mail notification.                    |
+# |------------------------+-----------------------------------------------|
+# | "email.bounced"        | A notification stating that an e-mail has     |
+# |                        | bounced.                                      |
+# |------------------------+-----------------------------------------------|
+# |                        |   A generic instant message-related           |
+# | "im"                   | notification that doesn't fit into any other  |
+# |                        | category.                                     |
+# |------------------------+-----------------------------------------------|
+# | "im.error"             | An instant message error notification.        |
+# |------------------------+-----------------------------------------------|
+# | "im.received"          | A received instant message notification.      |
+# |------------------------+-----------------------------------------------|
+# | "network"              |   A generic network notification that doesn't |
+# |                        | fit into any other category.                  |
+# |------------------------+-----------------------------------------------|
+# |                        |   A network connection notification, such as  |
+# | "network.connected"    | successful sign-on to a network service. This |
+# |                        | should not be confused with device.added for  |
+# |                        | new network devices.                          |
+# |------------------------+-----------------------------------------------|
+# |                        |   A network disconnected notification. This   |
+# | "network.disconnected" | should not be confused with device.removed    |
+# |                        | for disconnected network devices.             |
+# |------------------------+-----------------------------------------------|
+# | "network.error"        |   A network-related or connection-related     |
+# |                        | error.                                        |
+# |------------------------+-----------------------------------------------|
+# |                        |   A generic presence change notification that |
+# | "presence"             | doesn't fit into any other category, such as  |
+# |                        | going away or idle.                           |
+# |------------------------+-----------------------------------------------|
+# | "presence.offline"     | An offline presence change notification.      |
+# |------------------------+-----------------------------------------------|
+# | "presence.online"      | An online presence change notification.       |
+# |------------------------+-----------------------------------------------|
+# |                        |   A generic file transfer or download         |
+# | "transfer"             | notification that doesn't fit into any other  |
+# |                        | category.                                     |
+# |------------------------+-----------------------------------------------|
+# | "transfer.complete"    | A file transfer or download complete          |
+# |                        | notification.                                 |
+# |------------------------+-----------------------------------------------|
+# | "transfer.error"       | A file transfer or download error.            |
+# +------------------------------------------------------------------------+
+#

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Comment=Es una notificacion
+GenericName=Es una notificacion
+Icon=python
+Name=Azucena
+StartupNotify=true
+Terminal=false
+Type=Application
