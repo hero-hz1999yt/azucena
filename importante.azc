@@ -16,11 +16,9 @@
 # EJECUTA LOS SIGUIENTES COMANDOS:
 # ===================== INSTALACION DE DEPENDENCIAS =====================
 # ----------> ARCH LINUX Y DERIVADAS <----------
-# $ sudo pacman -S libnotify python-gobject tk python-gitpython git
-# $ yay -S python-playsound
+# $ sudo pacman -S libnotify python-gobject tk python-gitpython git mpg123
 # ----------> UBUNTU Y DERIVADAS [EN PRUEBAS AUN] <----------
-# $ sudo apt install libnotify-dev python3-v-sim python3-tk python3-git git
-# $ pip install playsound --break-system-packages
+# $ sudo apt install libnotify-dev python3-v-sim python3-tk python3-git git mpg123
 # ----------> FEDORA Y DERIVADAS <----------
 # $ sudo dnf install libnotify python-gobject python3-tkinter python3-GitPython git
 # ===================== DESCARGA Y INSTALACION DE AZUCENA =====================
