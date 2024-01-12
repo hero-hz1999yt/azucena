@@ -17,7 +17,7 @@
 # ===================== INSTALACION DE DEPENDENCIAS =====================
 # ----------> ARCH LINUX Y DERIVADAS <----------
 # $ sudo pacman -S libnotify python-gobject tk python-gitpython git mpg123
-# ----------> UBUNTU Y DERIVADAS [EN PRUEBAS AUN] <----------
+# ----------> UBUNTU Y DERIVADAS <----------
 # $ sudo apt install libnotify-dev python3-v-sim python3-tk python3-git git mpg123
 # ----------> FEDORA Y DERIVADAS <----------
 # $ sudo dnf install libnotify python-gobject python3-tkinter python3-GitPython git mpg123
@@ -32,15 +32,15 @@
 # [DESINSTALACION]
 # SI AZUCENA NO TE GUSTO POR UNA U OTRA RAZON PARA DESINSTALARLA ES MUY SENSILLO
 # EJECUTA ESTOS COMANDOS:
-# ===================== DESINSTALACION Y BORRADO DE ARCHIVOS DE AZUCENA =====================
-# $ rm -r /home/$USER/.azucena /home/$USER/.config/autostart/azucena_autostart.desktop
 # ===================== DESINSTALACION DE DEPENDENCIAS(SI NO ESTAN EN USO) =====================
 # ----------> ARCH LINUX Y DERIVADAS <----------
 # $ sudo pacman -Rsn libnotify python-gobject tk python-gitpython git mpg123
-# ----------> UBUNTU Y DERIVADAS [EN PRUEBAS AUN] <----------
+# ----------> UBUNTU Y DERIVADAS <----------
 # $ sudo apt remove libnotify-dev python3-v-sim python3-tk python3-git git mpg123
 # ----------> FEDORA Y DERIVADAS <----------
 # $ sudo dnf remove libnotify python-gobject python3-tkinter python3-GitPython git mpg123
+# ===================== DESINSTALACION Y BORRADO DE ARCHIVOS DE AZUCENA =====================
+# $ rm -r /home/$USER/.azucena /home/$USER/.config/autostart/azucena_autostart.desktop
 #
 # [PARAMETROS DE AZUCENA] //configuralos dentro del archivo:/home/user_name/.azucena/azucena.azc
 # // nota: si quieres hacer algun comentario en tu archivo de configuracion
