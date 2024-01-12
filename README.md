@@ -57,4 +57,4 @@ $ rm -r /home/$USER/.azucena /home/$USER/.config/autostart/azucena_autostart.des
 [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
 
 
-## =AMANTE DEL SOFTWARE LIBRE=
+## ==AMANTE DEL SOFTWARE LIBRE==
