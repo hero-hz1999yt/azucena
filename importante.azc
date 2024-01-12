@@ -140,80 +140,11 @@
 # // que emoticono mostrar "si no es IA, en un futuro se va a agregar pero aun no la tiene"
 # // la lista de estados de animo esta arriba, y esta es la estructura correcta para ajustar este parametro
 #
-# 11.-IDIOMA
-# AZUCENA CUENTA CON DOS IDIOMAS POR EL MOMENTO: ESPAÑOL MEXICANO Y INGLES ESTADOS UNIDOS
-# ESTE PARAMETRO ES PARA QUE AZUCENA HABLE INGLES O ESPAÑOL JEJE, VAMOS A VER UN EJEMPLO:
-# // idiomas
-# ES_MX, EN_US
-# IDIOMA=ES_MX;// este comando establece a azucena en español mexicano
-# IDIOMA=EN_US;// este otro ejemplo establece a azucena en ingles estados unidos
-#
-# 12.-CATEGORIA
-# ESTE PARAMETRO ES LA CATEGORIA DE LA NOTIFICACION, COMO EL SISTEMA LA VA A RECONOCER
-# UN EJEMPLO PARA AJUSTAR ESTE PARAMETRO ES ESTE:
-# CATEGORIA=device; // el formato de ajuste es asi, despues del simbolo = va la categoria
-# // les dejo la lista de categorias de notificaciones en linux, esta fue impartida por
-# // debian, con todos los datos y descripcion de cada categoria
-# +------------------------------------------------------------------------+
-# |          Type          |                  Description                  |
-# |------------------------+-----------------------------------------------|
-# | "device"               |   A generic device-related notification that  |
-# |                        | doesn't fit into any other category.          |
-# |------------------------+-----------------------------------------------|
-# | "device.added"         | A device, such as a USB device, was added to  |
-# |                        | the system.                                   |
-# |------------------------+-----------------------------------------------|
-# | "device.error"         | A device had some kind of error.              |
-# |------------------------+-----------------------------------------------|
-# | "device.removed"       |   A device, such as a USB device, was removed |
-# |                        | from the system.                              |
-# |------------------------+-----------------------------------------------|
-# | "email"                |   A generic e-mail-related notification that  |
-# |                        | doesn't fit into any other category.          |
-# |------------------------+-----------------------------------------------|
-# | "email.arrived"        | A new e-mail notification.                    |
-# |------------------------+-----------------------------------------------|
-# | "email.bounced"        | A notification stating that an e-mail has     |
-# |                        | bounced.                                      |
-# |------------------------+-----------------------------------------------|
-# |                        |   A generic instant message-related           |
-# | "im"                   | notification that doesn't fit into any other  |
-# |                        | category.                                     |
-# |------------------------+-----------------------------------------------|
-# | "im.error"             | An instant message error notification.        |
-# |------------------------+-----------------------------------------------|
-# | "im.received"          | A received instant message notification.      |
-# |------------------------+-----------------------------------------------|
-# | "network"              |   A generic network notification that doesn't |
-# |                        | fit into any other category.                  |
-# |------------------------+-----------------------------------------------|
-# |                        |   A network connection notification, such as  |
-# | "network.connected"    | successful sign-on to a network service. This |
-# |                        | should not be confused with device.added for  |
-# |                        | new network devices.                          |
-# |------------------------+-----------------------------------------------|
-# |                        |   A network disconnected notification. This   |
-# | "network.disconnected" | should not be confused with device.removed    |
-# |                        | for disconnected network devices.             |
-# |------------------------+-----------------------------------------------|
-# | "network.error"        |   A network-related or connection-related     |
-# |                        | error.                                        |
-# |------------------------+-----------------------------------------------|
-# |                        |   A generic presence change notification that |
-# | "presence"             | doesn't fit into any other category, such as  |
-# |                        | going away or idle.                           |
-# |------------------------+-----------------------------------------------|
-# | "presence.offline"     | An offline presence change notification.      |
-# |------------------------+-----------------------------------------------|
-# | "presence.online"      | An online presence change notification.       |
-# |------------------------+-----------------------------------------------|
-# |                        |   A generic file transfer or download         |
-# | "transfer"             | notification that doesn't fit into any other  |
-# |                        | category.                                     |
-# |------------------------+-----------------------------------------------|
-# | "transfer.complete"    | A file transfer or download complete          |
-# |                        | notification.                                 |
-# |------------------------+-----------------------------------------------|
-# | "transfer.error"       | A file transfer or download error.            |
-# +------------------------------------------------------------------------+
+# 10.-TIMBRE
+# TIMBRE QUE SUENA AL INVOCAR A AZUCENA, LO PUEDES MODIFICAR CON LA VARIABLE TIMBRE EN TU ARCHIVO DE
+# CONFIGURACION DE AZUCENA, RECIVE UN VALOR TRUE O FALSE PARA ENCENDERLO O APAGARLO, Y PUEDES PONER TU
+# SONIDO PERSONALIZADO EN LA CARPETA "/home/nombre_usuario/.azucena/sonidos" y remplazas el sonido "notificacion.mp3"
+# UN EJEMPLO DE CONFIGURACION DE ESTE PARAMETRO SERIA:
+# TIMBRE=TRUE; // para encenderlo
+# TIMBRE=FALSE; // para apagarlo
 #
