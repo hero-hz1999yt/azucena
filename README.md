@@ -33,7 +33,7 @@ $ mkdir /home/$USER/.config/autostart
 $ git clone https://github.com/hero-hz1999yt/azucena.git
 $ mv /home/$USER/azucena/azucena_autostart.desktop /home/$USER/.config/autostart/
 $ mv /home/$USER/azucena /home/$USER/.azucena
-$ echo "Exec=/home/$USER/.azucena/azucena" >> /home/$USER/.config/autostart/azucena_autostart.desktop
+$ echo "Exec=python3 /home/$USER/.azucena/azucena.py" >> /home/$USER/.config/autostart/azucena_autostart.desktop
 ```
 
 ## DESINSTALACION
