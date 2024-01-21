@@ -270,7 +270,7 @@ existeElArchivoDeConfiguracion()
 leerArchivoDeConfiguracion()
 existeElArchivoCreditos()
 
-# SI LAS LISTAS TIENEN MAS DE UN VALOR, REMOVEMOS EL CONFIGURADO POR EL PROGRAMA
+# -- COMENTARIO: si las listas tienen mas de un valor, borramos el valor por defecto del script END --
 if LISTA_DE_APODOS.__len__() > 1: 
     LISTA_DE_APODOS.__delitem__(0) 
 
