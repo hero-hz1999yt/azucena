@@ -75,7 +75,6 @@ DICCIONARIO = [
                 "Hola baby, hubo un error en el programa!",                                                                     # 11
                 "Falta el archivo que contiene los creditos de este programa\nRuta: /home/nombre_usuario/.azucena/creditos.azc" # 12                                                                                                 
         ]
-DIRECTORIO_BIN_LOCAL="/home/" + environ.get('USER') + "/.local/bin"
 
 # -- FUNCIONES --
 def existeElDirectorioRaiz():
