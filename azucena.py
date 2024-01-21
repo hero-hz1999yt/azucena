@@ -19,7 +19,7 @@ from gi.repository import Gtk
 from tkinter import messagebox      
 from io import open                 
 from git import Repo                
-from os import path, environ, listdir        
+from os import path, environ, listdir, mkdir       
 from datetime import datetime       
 from time import sleep              
 from re import sub, match           
@@ -75,6 +75,7 @@ DICCIONARIO = [
                 "Hola baby, hubo un error en el programa!",                                                                     # 11
                 "Falta el archivo que contiene los creditos de este programa\nRuta: /home/nombre_usuario/.azucena/creditos.azc" # 12                                                                                                 
         ]
+DIRECTORIO_BIN_LOCAL="/home/" + environ.get('USER') + "/.local/bin"
 
 # -- FUNCIONES --
 def existeElDirectorioRaiz():
