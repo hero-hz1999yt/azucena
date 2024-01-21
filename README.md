@@ -28,12 +28,12 @@ $ sudo dnf install libnotify python-gobject python3-tkinter python3-GitPython gi
 ```
 ==========>> DESCARGA Y INSTALACION DE AZUCENA <<==========
 ```bash
-$ cd /home/$USER/
 $ mkdir /home/$USER/.config/autostart
-$ git clone https://github.com/hero-hz1999yt/azucena.git
-$ mv /home/$USER/azucena/azucena.desktop /home/$USER/.config/autostart/
+$ cd && git clone https://github.com/hero-hz1999yt/azucena.git
+$ mv /home/$USER/azucena/iniciar-azucena.desktop /home/$USER/.config/autostart/
 $ mv /home/$USER/azucena /home/$USER/.azucena
-$ echo "Exec=python3 /home/$USER/.azucena/azucena.py" >> /home/$USER/.config/autostart/azucena.desktop
+$ sudo mv /home/$USER/.azucena/azucena /usr/local/bin/
+$ echo "Exec=python3 /home/$USER/.azucena/azucena.py" >> /home/$USER/.config/autostart/iniciar-azucena.desktop
 ```
 
 ## DESINSTALACION
