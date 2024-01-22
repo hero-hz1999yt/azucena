@@ -48,6 +48,8 @@ $ sudo dnf remove libnotify python-gobject python3-tkinter python3-GitPython git
 ```bash
 $ rm -r ~/.azucena ~/.config/autostart/azucena_autostart.desktop ~/.local/bin/azucena
 ```
+
+## COMENTARIOS SOBRE LA INSTALACION
 ====================>> MUY IMPORTANTE <<===================
 ```bash
 PARA QUE EL EJECUTABLE FUNCIONE DESDE TU TERMINAL AL ESCRIBIR EL NOMBRE
