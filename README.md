@@ -8,11 +8,18 @@ Es una notificacion que se muestra en el arranque de tu sesion, altamente config
 
 ## AUTOR
 
-- [@hero-hz1999yt(GITHUB)](https://www.github.com/hero-hz1999yt)
-- [@hero-hz1999yt(YOUTUBE_CHANEL_1)](https://www.youtube.com/@erik87373)
-- [@hero-hz1999yt(YOUTUBE_CHANEL_2)](https://www.youtube.com/@hero-linux)
-- [@hero-hz1999yt(FACEBOOK)](https://www.facebook.com/hero.hz1999yt/)
-- [@hero-hz1999yt(TWITTER)](https://twitter.com/ErikAlbertoRod3)
+- [hero-hz1999yt(GITHUB)](https://www.github.com/hero-hz1999yt)
+- [hero-hz1999yt(YOUTUBE)](https://www.youtube.com/@erik87373)
+- [hero-hz1999yt(YOUTUBE)](https://www.youtube.com/@hero-linux)
+- [hero-hz1999yt(FACEBOOK)](https://www.facebook.com/hero.hz1999yt/)
+- [hero-hz1999yt(TWITTER)](https://twitter.com/ErikAlbertoRod3)
+
+## AUTORES DE LOS ICONOS
+
+- [vectors-market](https://www.flaticon.es/autores/vectors-market)
+- [Smashicons](https://www.flaticon.es/autores/Smashicons)
+- [Freepik](https://www.flaticon.es/autores/Freepik)
+- [justicon](https://www.flaticon.es/autores/justicon)
 ## INSTALACION
 ### ===================>> DEPENDENCIAS <<======================
 
