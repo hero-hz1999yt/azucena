@@ -20,4 +20,5 @@ if [ -d "$DIRECTORIO" ]; then
     python3 /home/$USUARIO/.azucena/source/azucena.py
 else 
     echo -e "${COLOR_TERMINAL_ROJO}EL DIRECTORIO '.azucena' NO ESTA EN TU SISTEMA, VERIFICA QUE EL PROGRAMA ESTE INSTALADO${RESETEAR_COLOR}"
+    exit 1
 fi
