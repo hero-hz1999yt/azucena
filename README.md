@@ -28,12 +28,8 @@ $ sudo dnf install libnotify python-gobject python3-tkinter python3-GitPython gi
 ```
 ==========>> DESCARGA Y INSTALACION DE AZUCENA <<==========
 ```bash
-$ mkdir /home/$USER/.config/autostart
 $ cd && git clone https://github.com/hero-hz1999yt/azucena.git
-$ mv /home/$USER/azucena/azucena.desktop /home/$USER/.config/autostart/
-$ mv /home/$USER/azucena /home/$USER/.azucena
-$ cp /home/$USER/.azucena/azucena /usr/local/bin/
-$ echo "Exec=/home/$USER/.azucena/azucena" >> /home/$USER/.config/autostart/azucena.desktop
+$ ./azucena/instalar
 ```
 
 ## DESINSTALACION
@@ -50,8 +46,27 @@ $ sudo dnf remove libnotify python-gobject python3-tkinter python3-GitPython git
 ```
 ==============>> DESINSTALACION DE AZUCENA <<==============
 ```bash
-$ rm -r /home/$USER/.azucena /home/$USER/.config/autostart/azucena_autostart.desktop
+$ rm -r ~/.azucena ~/.config/autostart/azucena_autostart.desktop ~/.local/bin/azucena
 ```
+====================>> MUY IMPORTANTE <<===================
+```bash
+PARA QUE EL EJECUTABLE FUNCIONE DESDE TU TERMINAL AL ESCRIBIR EL NOMBRE
+DEL PROGRAMA EJEMPLO:
+
+$ azucena
+
+DEBES DE TENER AGREGADA LA DIRECCION /home/nombre_usuario/.local/bin EN
+TU VARIABLE DE ENTORNO 'PATH', SI NO LA TIENES AGREGADA POR DEFECTO NO 
+SE EJECUTARA, UNA SOLUCION ES MOVERLA CON EL COMANDO SUDO A UNA RUTA QUE 
+SI ESTE AGREGADA EJEMPLO:
+
+$ sudo cp ~/.azucena/azucena /usr/local/bin
+
+O
+
+$ sudo cp ~/.azucena/azucena /usr/bin
+```
+
 ## License
 
 [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
