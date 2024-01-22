@@ -1,8 +1,7 @@
 
 # AZUCENA
 
-Es una notificacion que se muestra en el inicio de sesion de tu usuario.
-Pero se tiene pensado que sera un asistente virtual para linux mejor que cortana y siri.
+Es una notificacion que se muestra en el arranque de tu sesion, altamente configurable, te muestra mensajes motivadores que tu mismo puedes modificar, se tiene planeado que azucena sera la mejor asistente virtual de linux, mejor que cortana y siri.
 
 
 
