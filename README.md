@@ -1,10 +1,7 @@
 
 # AZUCENA
 
-Es una notificacion que se muestra en el arranque de tu sesion, altamente configurable, te muestra mensajes motivadores que tu mismo puedes modificar, se tiene planeado que azucena sera la mejor asistente virtual de linux, mejor que cortana y siri.
-
-
-
+ES UNA NOTIFICACION ALTAMENTE PERSONALIZABLE CON EL OBJETIVO DE SER UNA PAREJA Y ASISTENTE VIRTUAL PARA LINUX, LLEGANDO A COMPETIR CON SIRI Y CORTANA.
 
 ## AUTOR
 
@@ -14,12 +11,7 @@ Es una notificacion que se muestra en el arranque de tu sesion, altamente config
 - [hero-hz1999yt(FACEBOOK)](https://www.facebook.com/hero.hz1999yt/)
 - [hero-hz1999yt(TWITTER)](https://twitter.com/ErikAlbertoRod3)
 
-## AUTORES DE LOS ICONOS
 
-- [vectors-market](https://www.flaticon.es/autores/vectors-market)
-- [Smashicons](https://www.flaticon.es/autores/Smashicons)
-- [Freepik](https://www.flaticon.es/autores/Freepik)
-- [justicon](https://www.flaticon.es/autores/justicon)
 ## INSTALACION
 ### ===================>> DEPENDENCIAS <<======================
 
@@ -254,9 +246,12 @@ MAMENSAJE-ASUSTADA="que haces despierto tan tarde?";
 MAMENSAJE-CELOSA="deseguro estas hablando con otra verdad ?";
 MAMENSAJE-ENAMORADA="vamonos a dormir juntos si ?";
 ```
-## License
+## LICENCIA
 
 [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
 
 
 ## ==AMANTE DEL SOFTWARE LIBRE==
+
+## IMAGENES
+![](/imagenes/1.png)
