@@ -1,7 +1,7 @@
 
 # AZUCENA
 
-ES UNA NOTIFICACION ALTAMENTE PERSONALIZABLE CON EL OBJETIVO DE SER UNA PAREJA Y ASISTENTE VIRTUAL PARA LINUX, LLEGANDO A COMPETIR CON SIRI Y CORTANA.
+**ES UNA NOTIFICACION ALTAMENTE PERSONALIZABLE CON EL OBJETIVO DE SER UNA PAREJA Y ASISTENTE VIRTUAL PARA LINUX, LLEGANDO A COMPETIR CON SIRI Y CORTANA.**
 
 ## AUTOR
 
@@ -10,7 +10,6 @@ ES UNA NOTIFICACION ALTAMENTE PERSONALIZABLE CON EL OBJETIVO DE SER UNA PAREJA Y
 - [hero-hz1999yt(YOUTUBE)](https://www.youtube.com/@hero-linux)
 - [hero-hz1999yt(FACEBOOK)](https://www.facebook.com/hero.hz1999yt/)
 - [hero-hz1999yt(TWITTER)](https://twitter.com/ErikAlbertoRod3)
-
 
 ## INSTALACION
 ### ===================>> DEPENDENCIAS <<======================
@@ -120,6 +119,7 @@ DONDE COLOCAR A AZUCENA ES IMPRIMIR EN CONSOLA EL CONTENIDO DE ESA VARIABLE CON 
 echo $PATH
 ```
 Y LES MOSTRARA TODAS LAS RUTAS, SOLO ELIJEN LA QUE USTEDES QUIERAN
+
 ## CONFIGURACION
 TODOS ESTOS PARAMETROS SE CONFIGURAN EN EL ARCHIVO '_azucena.azc_' QUE SE 
 ENCUENTRA EN LA RUTA '_/home/nombre_usuario/.azucena_' SI NO SE ENCUENTRA
@@ -246,10 +246,26 @@ MAMENSAJE-ASUSTADA="que haces despierto tan tarde?";
 MAMENSAJE-CELOSA="deseguro estas hablando con otra verdad ?";
 MAMENSAJE-ENAMORADA="vamonos a dormir juntos si ?";
 ```
+
+## DISTRIBUCIONES DONDE SE TESTEO
+| Distribucion | Version | Escritorio | Resultado del testeo |
+| :---         | :---    | :---       | :---                 |
+| Fedora Spin  | 39      | Cinnamon   | **OK**               |
+| Fedora Spin  | 39      | KDE Plasma | **OK**               |
+| Ubuntu       | 23.10   | Gnome      | **OK**               |
+| Ubuntu Mate  | 23.10   | Mate       | **OK**               |
+| Xubuntu      | 23.10   | XFCE       | **OK**               | 
+| KDE Neon     | 5.27    | KDE Plasma | **OK**               |
+| Debian       | 12      | Gnome      | **OK**               |
+| Linux Mint   | 21.3    | Cinnamon   | **OK**               |
+| Arch linux   | RL      | KDE Plasma | **OK**               |
+| Arch linux   | RL      | XFCE       | **OK**               |
+| SteamOS      | 3.5.7   | KDE Plasma | **OK**               |
+| Loc-OS       |         | XFCE       | **OK**               |
+
 ## LICENCIA
 
 [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
-
 
 ## ==AMANTE DEL SOFTWARE LIBRE==
 
