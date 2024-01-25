@@ -25,20 +25,22 @@ Es una notificacion que se muestra en el arranque de tu sesion, altamente config
 
 **_--ARCH LINUX Y DERIVADAS--_**
 ```bash
-$ sudo pacman -S libnotify python-gobject tk python-gitpython git mpg123
+sudo pacman -S libnotify python-gobject tk python-gitpython git mpg123
 ```
 **_--UBUNTU Y DERIVADAS--_**
 ```bash
-$ sudo apt install libnotify-dev python3-v-sim python3-tk python3-git git mpg123
+sudo apt install libnotify-dev python3-v-sim python3-tk python3-git git mpg123
 ```
 **_--FEDORA Y DERIVADOS--_**
 ```bash
-$ sudo dnf install libnotify python-gobject python3-tkinter python3-GitPython git mpg123
+sudo dnf install libnotify python-gobject python3-tkinter python3-GitPython git mpg123
 ```
 ### ==========>> DESCARGA Y INSTALACION DE AZUCENA <<==========
 ```bash
-$ cd && git clone https://github.com/hero-hz1999yt/azucena.git
-$ ./azucena/instalar
+# descargamos el programa en el home
+cd && git clone https://github.com/hero-hz1999yt/azucena.git
+# lo instalamos con este comando
+./azucena/instalar
 ```
 
 ## DESINSTALACION
@@ -46,20 +48,20 @@ $ ./azucena/instalar
 
 **_--ARCH LINUX Y DERIVADAS--_**
 ```bash
-$ sudo pacman -Rsn libnotify python-gobject tk python-gitpython git mpg123
+sudo pacman -Rsn libnotify python-gobject tk python-gitpython git mpg123
 ```
 **_--UBUNTU Y DERIVADAS--_**
 ```bash
-$ sudo apt remove libnotify-dev python3-v-sim python3-tk python3-git git mpg123
+sudo apt remove libnotify-dev python3-v-sim python3-tk python3-git git mpg123
 ```
 
 **_--FEDORA Y DERIVADOS--_**
 ```bash
-$ sudo dnf remove libnotify python-gobject python3-tkinter python3-GitPython git mpg123
+sudo dnf remove libnotify python-gobject python3-tkinter python3-GitPython git mpg123
 ```
 ### ==============>> DESINSTALACION DE AZUCENA <<==============
 ```bash
-$ rm -r ~/.azucena ~/.config/autostart/azucena_autostart.desktop ~/.local/bin/azucena
+rm -r ~/.azucena ~/.config/autostart/azucena_autostart.desktop ~/.local/bin/azucena
 ```
 
 ## COMENTARIOS SOBRE LA INSTALACION
@@ -68,38 +70,39 @@ $ rm -r ~/.azucena ~/.config/autostart/azucena_autostart.desktop ~/.local/bin/az
 PARA QUE EL EJECUTABLE FUNCIONE DESDE TU TERMINAL AL ESCRIBIR EL NOMBRE
 DEL PROGRAMA EJEMPLO:
 ```bash
-$ azucena
+azucena
 ```
-DEBES DE TENER AGREGADA LA DIRECCION /home/nombre_usuario/.local/bin EN
-TU VARIABLE DE ENTORNO 'PATH', SI NO LA TIENES AGREGADA POR DEFECTO NO 
+DEBES DE TENER AGREGADA LA DIRECCION '_/home/nombre_usuario/.local/bin_' EN
+TU VARIABLE DE ENTORNO '_PATH_', SI NO LA TIENES AGREGADA POR DEFECTO NO 
 SE EJECUTARA 
 
 * **SOLUCION 1 (RECOMENDABLE)**
 
 ESTA SOLUCION CONSISTE EN AGREGAR EN SU ARCHIVO DE CONFIGURACION DE SU SHELL, EL SIGUIENTE COMANDO PARA CADA QUE SE ABRA UNA TERMINAL EXPORTE ESA RUTA EN
-SU VARIABLE 'PATH', LES MOSTRARE COMO SERIA EN LAS SHELL BASH, ZSH Y FISH
+SU VARIABLE '_PATH_', LES MOSTRARE COMO SERIA EN LAS SHELL BASH, ZSH Y FISH
 QUE SON LAS MAS UTILIZADAS
 
 **_---->>BASH<<----_**
 ```bash
-$ nano ~/.bashrc
+nano ~/.bashrc
 ```
 **_---->>ZSH<<----_**
 ```bash
-$ nano ~/.zshrc
+nano ~/.zshrc
 ```
 AGREGAMOS ESTE COMANDO EN EL ARCHIVO DE CONFIGURACION 
 ```bash
-$ export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 ```
 **_---->>FISH<<----_**
 
 PARA FISH EJECUTAREMOS EL SIGUIENTE COMANDO
 ```bash
-$ nano ~/.config/fish/config.fish
+nano ~/.config/fish/config.fish
 ```
 Y AGREGAREMOS EN EL ARCHIVO LA SIGUIENTE FUNCION
 ```bash
+# esta funcion se ejecuta con el arranque de fish
 function fish_greeting
     export PATH="$HOME/.local/bin:$PATH"
 end
@@ -110,26 +113,26 @@ OTRA SOLUCION ES MOVERLA CON EL COMANDO SUDO A UNA RUTA QUE
 SI ESTE AGREGADA EJEMPLO:
 
 ```bash
-$ sudo mv ~/.local/bin/azucena /usr/local/bin
+sudo mv ~/.local/bin/azucena /usr/local/bin
 ```
 O
 
 ```bash
-$ sudo mv ~/.local/bin/azucena /usr/bin
+sudo mv ~/.local/bin/azucena /usr/bin
 ```
 
 LO QUE PUEDEN HACER PARA SABER QUE RUTAS TIENEN AGREGADAS Y ASI SABER
 DONDE COLOCAR A AZUCENA ES IMPRIMIR EN CONSOLA EL CONTENIDO DE ESA VARIABLE CON EL SIGUIENTE COMANDO
 
 ```bash
-$ echo $PATH
+echo $PATH
 ```
 Y LES MOSTRARA TODAS LAS RUTAS, SOLO ELIJEN LA QUE USTEDES QUIERAN
 ## CONFIGURACION
 TODOS ESTOS PARAMETROS SE CONFIGURAN EN EL ARCHIVO '_azucena.azc_' QUE SE 
 ENCUENTRA EN LA RUTA '_/home/nombre_usuario/.azucena_' SI NO SE ENCUENTRA
-EN LA RUTA EJECUTA A AZUCENA PARA QUE LO GENERE AUTOMATICAMENTE, TAMBIEN
-SE PUEDE CONFIGURAR SI ABRIMOS A AZUCENA Y DAMOS CLICK EN EL BOTON CONFIGURACION DE NUESTRA NOTIFICACION
+EN LA RUTA EJECUTA EL PROGRAMA PARA QUE SE GENERE AUTOMATICAMENTE, TAMBIEN
+SE PUEDE CONFIGURAR SI ABRIMOS A AZUCENA Y DAMOS CLICK EN EL BOTON CONFIGURACION.
 
 ### -->> PARAMETRO AZUCENA <<--
 ESTE PARAMETRO ES EL APODO QUE QUIERES PONERLE AL PROGRAMA, ESTE LO CONFIGURAMOS COLOCANDO EL VALOR ENTRE LAS COMILLAS, TODA LA ESTRUCTURA DEL PARAMETRO DEBE DE QUEDAR COMO ESTA CONFIGURADO SI NO NO LO LEERA, VAMOS CON UN EJEMLPO:
