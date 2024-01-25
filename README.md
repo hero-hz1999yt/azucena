@@ -255,3 +255,7 @@ MAMENSAJE-ENAMORADA="vamonos a dormir juntos si ?";
 
 ## IMAGENES
 ![](/imagenes/1.png)
+![](/imagenes/2.png)
+![](/imagenes/3.png)
+![](/imagenes/4.png)
+![](/imagenes/5.png)
