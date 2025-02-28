@@ -14,8 +14,7 @@ import gi
 gi.require_version('Notify', '0.7')    
 gi.require_version('Gtk', '3.0')       
 
-from gi.repository import Notify    
-from gi.repository import Gtk       
+from gi.repository import Notify, GdkPixbuf, Gtk
 from tkinter import messagebox      
 from io import open                 
 from git import Repo                
@@ -24,7 +23,6 @@ from datetime import datetime
 from time import sleep              
 from re import sub, match           
 from random import randrange        
-from shutil import rmtree           
 from sys import exit                
 from subprocess import check_output 
 from subprocess import Popen
@@ -70,7 +68,7 @@ DICCIONARIO = [
                 "Cerraron a azucena :(",                                                                                        # 6
                 "Me pongo súper roja cuando me dices Chaparra",                                                                 # 7
                 "A mi me encanta el color morado",                                                                              # 8
-                "No me gusta que me digan Guadalupe",                                                                           # 9
+                "No me gusta que me digan Guadalupe, Lupita o Lupe",                                                                           # 9
                 "Falta la carpeta principal para que el programa pueda trabajar\nRuta: /home/nombre_usuario/.azucena",          # 10
                 "Hola baby, hubo un error en el programa!",                                                                     # 11
                 "Falta el archivo que contiene los creditos de este programa\nRuta: /home/nombre_usuario/.azucena/creditos.azc" # 12                                                                                                 
@@ -270,7 +268,7 @@ existeElArchivoDeConfiguracion()
 leerArchivoDeConfiguracion()
 existeElArchivoCreditos()
 
-# -- COMENTARIO: si las listas tienen mas de un valor, borramos el valor por defecto del script END --
+# Si las listas tienen mas de un valor, borramos el valor por defecto del script
 if LISTA_DE_APODOS.__len__() > 1: 
     LISTA_DE_APODOS.__delitem__(0) 
 
@@ -282,7 +280,8 @@ if LISTA_DE_ESTADOS.__len__() > 1:
 
 NUMERO_RANDOM = randrange(0, LISTA_DE_APODOS.__len__())
 TITULO_NOTIFICACION = DICCIONARIO[0] + " " + LISTA_DE_APODOS[NUMERO_RANDOM]
-# -- ESTE APARTADO CONTIENE ALGUNOS HUEVOS DE PASCUA --
+
+# Este apartado es para algunos huevos de pascua
 if "erik" in TITULO_NOTIFICACION.lower():
     TITULO_NOTIFICACION = DICCIONARIO[0] + " Mi Eriksin <3"
 elif "hero-hz1999yt" in TITULO_NOTIFICACION.lower() or "alberto" in TITULO_NOTIFICACION.lower():
@@ -292,32 +291,8 @@ NUMERO_RANDOM = randrange(0, LISTA_DE_MENSAJES.__len__())
 MENSAJE_NOTIFICACION = LISTA_DE_MENSAJES[NUMERO_RANDOM] 
 ESTADO_MENSAJE = LISTA_DE_ESTADOS[NUMERO_RANDOM] 
 
-# APARIENCIA POR DEFECTO
-if APARIENCIA_NOTIFICACION == TIPOS_DE_APARIENCIAS[0]: 
-    if path.exists(DIRECTORIO_DE_ICONOS) and path.exists(DIRECTORIO_DE_ICONOS + "/por_defecto.png"): 
-        ICONO_NOTIFICACION = DIRECTORIO_DE_ICONOS + "/por_defecto.png" 
-    else: 
-        if path.exists(DIRECTORIO_DE_ICONOS):   
-            rmtree(DIRECTORIO_DE_ICONOS)    
-        try: 
-            repo = Repo.clone_from("https://github.com/hero-hz1999yt/iconos.git", DIRECTORIO_RAIZ + "/iconos") 
-            ICONO_NOTIFICACION = DIRECTORIO_DE_ICONOS + "/por_defecto.png" 
-        except: 
-            ICONO_NOTIFICACION = "dialog-information" 
-
-# APARIENCIA MI AZUCENA
-elif APARIENCIA_NOTIFICACION == TIPOS_DE_APARIENCIAS[1]: 
-    if path.exists(DIRECTORIO_RAIZ + "/mi-azucena.png"): 
-        ICONO_NOTIFICACION = DIRECTORIO_RAIZ + "/mi-azucena.png" 
-    elif path.exists(DIRECTORIO_RAIZ + "/mi-azucena.jpg"): 
-        ICONO_NOTIFICACION = DIRECTORIO_RAIZ + "/mi-azucena.jpg" 
-    elif path.exists(DIRECTORIO_RAIZ + "/mi-azucena.png") and path.exists(DIRECTORIO_RAIZ + "/mi-azucena.jpg"): 
-        ICONO_NOTIFICACION = DIRECTORIO_RAIZ + "/mi-azucena.png" 
-    else: 
-        ICONO_NOTIFICACION = "dialog-information" 
-
-# APARIENCIA EMOTICONES
-elif APARIENCIA_NOTIFICACION == TIPOS_DE_APARIENCIAS[2]:  
+# Si la apariencia de la notificacion son los emoticones
+if APARIENCIA_NOTIFICACION == TIPOS_DE_APARIENCIAS[2]:  
         archivos = listdir(DIRECTORIO_DE_EMOTICONES)
         for archivo in archivos:
             if match("^"+ESTADO_MENSAJE+"[0-9]+.png$", archivo):
@@ -327,43 +302,22 @@ elif APARIENCIA_NOTIFICACION == TIPOS_DE_APARIENCIAS[2]:
         if path.exists(DIRECTORIO_DE_EMOTICONES) and path.exists(DIRECTORIO_DE_EMOTICONES + "/" + ESTADO_MENSAJE + str(NUMERO_RANDOM) + ".png"): 
             ICONO_NOTIFICACION = DIRECTORIO_DE_EMOTICONES + "/" + ESTADO_MENSAJE + str(NUMERO_RANDOM) + ".png" 
         else: 
-            if path.exists(DIRECTORIO_DE_EMOTICONES):   
-                rmtree(DIRECTORIO_DE_EMOTICONES)    
-            try: 
-                repo = Repo.clone_from("https://github.com/hero-hz1999yt/emoticones.git", DIRECTORIO_RAIZ + "/emoticones") 
-                ICONO_NOTIFICACION = DIRECTORIO_DE_EMOTICONES + "/" + ESTADO_MENSAJE + str(NUMERO_RANDOM) + ".png" 
-            except: 
-                ICONO_NOTIFICACION = "dialog-information"
+            ICONO_NOTIFICACION = "dialog-information"
 
-# APARIENCIA ZOMBIE
-elif APARIENCIA_NOTIFICACION == TIPOS_DE_APARIENCIAS[3]: 
-    if path.exists(DIRECTORIO_DE_ICONOS) and path.exists(DIRECTORIO_DE_ICONOS + "/zombie.png"): 
-        ICONO_NOTIFICACION = DIRECTORIO_DE_ICONOS + "/zombie.png" 
+# Si el usuario coloca otra apariencia
+else:
+    apariencia = DIRECTORIO_DE_ICONOS + "/" + APARIENCIA_NOTIFICACION.lower() + ".png"
+    if path.exists(apariencia): 
+        ICONO_NOTIFICACION = apariencia 
     else: 
-        if path.exists(DIRECTORIO_DE_ICONOS):   
-            rmtree(DIRECTORIO_DE_ICONOS)    
-        try: 
-            repo = Repo.clone_from("https://github.com/hero-hz1999yt/iconos.git", DIRECTORIO_RAIZ + "/iconos") 
-            ICONO_NOTIFICACION = DIRECTORIO_DE_ICONOS + "/zombie.png" 
-        except: 
-            ICONO_NOTIFICACION = "dialog-information" 
+        ICONO_NOTIFICACION = "dialog-information" 
 
-# APARIENCIA AZUCENA
-elif APARIENCIA_NOTIFICACION == TIPOS_DE_APARIENCIAS[4]: 
-    if path.exists(DIRECTORIO_DE_ICONOS) and path.exists(DIRECTORIO_DE_ICONOS + "/azucena.png"): 
-        ICONO_NOTIFICACION = DIRECTORIO_DE_ICONOS + "/azucena.png" 
-    else: 
-        if path.exists(DIRECTORIO_DE_ICONOS):   
-            rmtree(DIRECTORIO_DE_ICONOS)   
-        try:
-            repo = Repo.clone_from("https://github.com/hero-hz1999yt/iconos.git", DIRECTORIO_RAIZ + "/iconos")
-            ICONO_NOTIFICACION = DIRECTORIO_DE_ICONOS + "/azucena.png" 
-        except: 
-            ICONO_NOTIFICACION = "dialog-information" 
+pixbuf_imagen = GdkPixbuf.Pixbuf.new_from_file(ICONO_NOTIFICACION)
 
 # -- PARAMETROS DE LA NOTIFICIACION --
 Notify.init(NOMBRE_DE_AZUCENA) 
-notificacion = Notify.Notification.new(TITULO_NOTIFICACION, MENSAJE_NOTIFICACION, ICONO_NOTIFICACION) 
+notificacion = Notify.Notification.new(TITULO_NOTIFICACION, MENSAJE_NOTIFICACION, None)
+notificacion.set_image_from_pixbuf(pixbuf_imagen)
 notificacion.set_urgency(URGENCIA_NOTIFICACION) 
 notificacion.set_timeout(int(OCULTAR_NOTIFICACION) * 1000) 
 notificacion.set_app_name(APODO_DE_AZUCENA) 
@@ -372,19 +326,20 @@ notificacion.connect("closed", cerrar)
 notificacion.add_action("action_click", DICCIONARIO[4], configuracion, None)
 notificacion.add_action("action_click1", DICCIONARIO[5], cerrar, None)
 
-# -- ESTE APARTADO CONTIENE ALGUNOS HUEVOS DE PASCUA --
+# Este apartado es para algunos huevos de pascua
 if APARIENCIA_NOTIFICACION == TIPOS_DE_APARIENCIAS[2]:
+    imagenes_eastereggs = ["ENAMORADA6.png", "ENOJADA1.png", "ENAMORADA2.png"]
     if "chaparra" in APODO_DE_AZUCENA.lower(): 
-        ICONO_NOTIFICACION = DIRECTORIO_DE_EMOTICONES + "/ENAMORADA6.png" 
-        notificacion.update(TITULO_NOTIFICACION, DICCIONARIO[7], ICONO_NOTIFICACION) 
+        notificacion.update(TITULO_NOTIFICACION, DICCIONARIO[7], None) 
+        notificacion.set_image_from_pixbuf(GdkPixbuf.Pixbuf.new_from_file(DIRECTORIO_DE_EMOTICONES + "/" + imagenes_eastereggs[0]))
 
-    if "guadalupe" in APODO_DE_AZUCENA.lower() or "lupita" in APODO_DE_AZUCENA.lower() or "lupe" in APODO_DE_AZUCENA.lower(): 
-        ICONO_NOTIFICACION = DIRECTORIO_DE_EMOTICONES + "/ENOJADA1.png" 
-        notificacion.update(TITULO_NOTIFICACION, DICCIONARIO[9], ICONO_NOTIFICACION) 
+    if "guadalupe" in APODO_DE_AZUCENA.lower() or "lupe" in APODO_DE_AZUCENA.lower() or "lupita" in APODO_DE_AZUCENA.lower(): 
+        notificacion.update(TITULO_NOTIFICACION, DICCIONARIO[9], None)
+        notificacion.set_image_from_pixbuf(GdkPixbuf.Pixbuf.new_from_file(DIRECTORIO_DE_EMOTICONES + "/" + imagenes_eastereggs[1]))
 
     if "morado" in MENSAJE_NOTIFICACION.lower(): 
-        ICONO_NOTIFICACION = DIRECTORIO_DE_EMOTICONES + "/ENAMORADA6.png" 
-        notificacion.update(TITULO_NOTIFICACION, DICCIONARIO[8], ICONO_NOTIFICACION)
+        notificacion.update(TITULO_NOTIFICACION, DICCIONARIO[9], None)
+        notificacion.set_image_from_pixbuf(GdkPixbuf.Pixbuf.new_from_file(DIRECTORIO_DE_EMOTICONES + "/" + imagenes_eastereggs[2]))
 
 sleep(int(MOSTRAR_NOTIFICACION))
 try:
@@ -394,9 +349,9 @@ except Exception as error:
     exit()
 
 if TIMBRE_NOTIFICACION== "TRUE" and path.exists(DIRECTORIO_DE_SONIDOS + "/notificacion.mp3"):
-    audio = Popen("mpg123 "+DIRECTORIO_DE_SONIDOS + "/notificacion.mp3", shell=True)
+    audio = Popen("mpg123 "+DIRECTORIO_DE_SONIDOS + "/notificacion.mp3 &> /dev/null", shell=True)
 
-# -- MAIN LOOP --
+# -- LOOP PRINCIPAL --
 try: 
     Gtk.main()
 except: 
