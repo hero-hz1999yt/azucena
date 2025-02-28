@@ -142,13 +142,9 @@ ESTE PARAMETRO ES LO QUE LA NOTIFICACION MOSTRARA CUANDO SEA INVOCADA, TIENE 5 A
 | AZUCENA     | muestra el icono de azucena                          |
 | ZOMBIE      | muestra un zombie                                    |
 
-OJO: PARA QUE LA IMAGEN SE VISUALIZE EN LA NOTIFICACION TIENE QUE ESTAR EN LA SIGUIENTE RUTA '_/home/nombre_usuario/.azucena_' Y TIENE QUE LLAMARCE '_mi-azucena.png o .jpg_' DE MANERA QUE QUEDE DE LA SIGUIENTE MANERA.
+OJO: PARA QUE LA IMAGEN SE VISUALIZE EN LA NOTIFICACION TIENE QUE ESTAR EN LA SIGUIENTE RUTA '_/home/nombre_usuario/.azucena/iconos_' Y TIENE QUE LLAMARSE '_mi_azucena.png_' DE MANERA QUE QUEDE DE LA SIGUIENTE MANERA.
 
 _/home/nombre_usuario/.azucena/mi-azucena.png_
-
-o
-
-_/home/nombre_usuario/.azucena/mi-azucena.jpg_
 
 Y PARA TERMINAR AQUI UN EJEMPLO DE CONFIGURACION DE ESTE PARAMETRO SERIA DE LA SIGUIENTE FORMA:
 ```bash
