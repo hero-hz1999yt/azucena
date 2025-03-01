@@ -23,10 +23,12 @@ COLOR_TERMINAL_BLANCO='\033[0;37m'
 RESETEAR_COLOR='\033[0m'
 ARCHIVO_DESKTOP="/home/$USUARIO/.config/autostart/azucena.desktop"
 EJECUTABLE_TERMINAL="/home/$USUARIO/.local/bin/azucena"
+ICONO_APLICACION="/home/$USUARIO/.local/share/pixmaps/azucena.png"
 DIRECTORIO_CLONADO_GIT="/home/$USUARIO/azucena"
 DIRECTORIO_GITHUB="/home/$USUARIO/.azucena/.git"
 DIRECTORIO_AUTOSTART="/home/$USUARIO/.config/autostart"
 DIRECTORIO_BIN="/home/$USUARIO/.local/bin"
+DIRECTORIO_PIXMAPS="/home/$USUARIO/.local/share/pixmaps"
 
 clear
 
@@ -42,41 +44,47 @@ echo -e "${COLOR_TERMINAL_AMARILLO}|                                            
 echo -e "${COLOR_TERMINAL_AMARILLO}+-----------------------------AUTHOR BY: HERO_HZ1999YT----------------------------+${RESETEAR_COLOR}"
 echo -e "${COLOR_TERMINAL_CYAN}============================>> INICIANDO INSTALACION <<============================${RESETEAR_COLOR}"
 
-# VERIFICAMOS SI HAY UNA INSTALACION EXISTENTE DE AZUCENA Y LA REMOVEMOS
+# -- VERIFICAMOS SI HAY UNA INSTALACION EXISTENTE DE AZUCENA Y LA REMOVEMOS --
 echo -e "${COLOR_TERMINAL_AZUL}BUSCANDO INTALACION DEL PROGRAMA YA EXISTENTES PARA REMOVERLA${RESETEAR_COLOR}"
-# DIRECTORIO
+# directorio raiz del programa
 if [ -d "$DIRECTORIO" ]; then
     rm -r -d -f $DIRECTORIO
     echo -e "${COLOR_TERMINAL_AMARILLO}DIRECTORIO RAIZ[REMOVIDO]${RESETEAR_COLOR}"
 fi
 
-# ARCHIVO DESKTOP
+# archivo .desktop
 if [ -f "$ARCHIVO_DESKTOP" ]; then
     rm -f $ARCHIVO_DESKTOP
     echo -e "${COLOR_TERMINAL_AMARILLO}ARCHIVO DESKTOP[REMOVIDO]${RESETEAR_COLOR}"
 fi
 
-# ARCHIVO DESKTOP
+# ejecutable sh
 if [ -f "$EJECUTABLE_TERMINAL" ]; then
     rm  -f $EJECUTABLE_TERMINAL
     echo -e "${COLOR_TERMINAL_AMARILLO}ARCHIVO EJECUTABLE[REMOVIDO]${RESETEAR_COLOR}"
 fi
 
-# INSTALACION
+# icono de la aplicacion
+if [ -f "$ICONO_APLICACION" ]; then
+    rm -f $ICONO_APLICACION
+    echo -e "${COLOR_TERMINAL_AMARILLO}ICONO DE LA APLICACION[REMOVIDO]${RESETEAR_COLOR}"
+fi
+
+# -- INSTALACION --
 echo -e "${COLOR_TERMINAL_AZUL}ARCHIVOS EXISTENTES REMOVIDOS, INICIANDO INSTALACION 7W7${RESETEAR_COLOR}"
 echo -e "${COLOR_TERMINAL_AZUL}BUSCANDO DIRECTORIO CLONADO DE GIT EN TU DIRECTORIO HOME${RESETEAR_COLOR}"
 if [ -d "$DIRECTORIO_CLONADO_GIT" ]; then
     echo -e "${COLOR_TERMINAL_VERDE}DIRECTORIO[EXISTENTE]${RESETEAR_COLOR}"
     
-    # RENOMBRAMOS EL REPOSITORIO CLONADO DE GITHUB
+    # renombramos el repositorio de github
     mv $DIRECTORIO_CLONADO_GIT $DIRECTORIO
     echo -e "${COLOR_TERMINAL_VERDE}DIRECTORIO RAIZ[CREADO]${RESETEAR_COLOR}"
     
-    # REMOVEMOS EL DIRECTORIO QUE GITHUB CREA POR DEFECTO
+    # removemos el estorvoso directorio .git que se crea
     rm -r -f $DIRECTORIO_GITHUB
     echo -e "${COLOR_TERMINAL_VERDE}DIRECTORIO .git[REMOVIDO]${RESETEAR_COLOR}"
 
-    # ARCHIVO .DESKTOP QUE EJECUTA A AZUCENA AL ARRANCAR LA SESION
+    # archivo .desktop para inicar azucena al arrancar
     echo -e "${COLOR_TERMINAL_VERDE}MOVIENDO ARCHIVO .desktop A SU RUTA${RESETEAR_COLOR}"
     if [ -d "$DIRECTORIO_AUTOSTART" ]; then
         mv "$DIRECTORIO/azucena.desktop" $DIRECTORIO_AUTOSTART
@@ -88,7 +96,7 @@ if [ -d "$DIRECTORIO_CLONADO_GIT" ]; then
     fi
     echo "Exec=/home/$USER/.azucena/azucena" >> /home/$USER/.config/autostart/azucena.desktop
 
-    # ARCHIVO EJECUTABLE POR TERMINAL
+    # ejecutable por terminal
     echo -e "${COLOR_TERMINAL_VERDE}MOVIENDO ARCHIVO EJECUTABLE A SU RUTA${RESETEAR_COLOR}"
     if [ -d "$DIRECTORIO_BIN" ]; then
         cp "$DIRECTORIO/azucena" $DIRECTORIO_BIN
@@ -99,7 +107,18 @@ if [ -d "$DIRECTORIO_CLONADO_GIT" ]; then
         echo -e "${COLOR_TERMINAL_VERDE}ARCHIVO EJECUTABLE[COPIADO]${RESETEAR_COLOR}"
     fi
 
-    # REMOVEMOS EL ARCHIVO DE INSTALACION
+    # icono del programa
+    echo -e "${COLOR_TERMINAL_VERDE}MOVIENDO ICONO DE LA APLICACION A SU RUTA${RESETEAR_COLOR}"
+    if [ -d "$DIRECTORIO_PIXMAPS" ]; then
+        cp "$DIRECTORIO/imagenes/azucena.png" $DIRECTORIO_PIXMAPS
+        echo -e "${COLOR_TERMINAL_VERDE}ICONO DE LA APLICACION[COPIADO]${RESETEAR_COLOR}"
+    else
+        mkdir $DIRECTORIO_PIXMAPS
+        cp "$DIRECTORIO/imagenes/azucena.png" $DIRECTORIO_PIXMAPS
+        echo -e "${COLOR_TERMINAL_VERDE}ICONO DE LA APLICACION[COPIADO]${RESETEAR_COLOR}"
+    fi
+
+    # removemos el archivo de instalacion
     echo -e "${COLOR_TERMINAL_VERDE}REMOVIENDO ARCHIVO DE INSTALACION${RESETEAR_COLOR}"
     rm -f "$DIRECTORIO/instalar"
 

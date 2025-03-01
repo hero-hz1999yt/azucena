@@ -1,8 +1,8 @@
 [Desktop Entry]
 Comment=Es una notificacion
 GenericName=Es una notificacion
-Icon=python
-Name=Azucena
+Icon=azucena
+Name=azucena
 StartupNotify=true
 Terminal=false
 Type=Application
