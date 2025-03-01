@@ -6,9 +6,9 @@
 ## AUTOR
 
 - [hero-hz1999yt(GITHUB)](https://www.github.com/hero-hz1999yt)
-- [hero-hz1999yt(YOUTUBE)](www.youtube.com/@hero_hz1999yt)
-- [hero-hz1999yt(YOUTUBE)](www.youtube.com/@HERO_LINUX1999)
-- [hero-hz1999yt(FACEBOOK)](https://www.facebook.com/hero.hz1999yt/)
+- [hero-hz1999yt(YOUTUBE)](https://www.youtube.com/@hero_hz1999yt)
+- [hero-hz1999yt(YOUTUBE)](https://www.youtube.com/@HERO_LINUX1999)
+- [hero-hz1999yt(FACEBOOK)](https://www.facebook.com/hero.hz1999yt)
 - [hero-hz1999yt(TWITTER)](https://twitter.com/ErikAlbertoRod3)
 
 ## INSTALACION
