@@ -6,8 +6,8 @@
 ## AUTOR
 
 - [hero-hz1999yt(GITHUB)](https://www.github.com/hero-hz1999yt)
-- [hero-hz1999yt(YOUTUBE)](https://www.youtube.com/@erik87373)
-- [hero-hz1999yt(YOUTUBE)](https://www.youtube.com/@hero-linux)
+- [hero-hz1999yt(YOUTUBE)](www.youtube.com/@hero_hz1999yt)
+- [hero-hz1999yt(YOUTUBE)](www.youtube.com/@HERO_LINUX1999)
 - [hero-hz1999yt(FACEBOOK)](https://www.facebook.com/hero.hz1999yt/)
 - [hero-hz1999yt(TWITTER)](https://twitter.com/ErikAlbertoRod3)
 
@@ -16,22 +16,22 @@
 
 **_--ARCH LINUX Y DERIVADAS--_**
 ```bash
-sudo pacman -S --needed libnotify python-gobject tk python-gitpython git mpg123 python-gtts
+$ sudo pacman -S --needed libnotify python-gobject tk python-gitpython git mpg123 python-gtts
 ```
 **_--UBUNTU Y DERIVADAS--_**
 ```bash
-sudo apt install libnotify-dev python3-v-sim python3-tk python3-git git mpg123 python3-gtts
+$ sudo apt install libnotify-dev python3-v-sim python3-tk python3-git git mpg123 python3-gtts
 ```
 **_--FEDORA Y DERIVADOS--_**
 ```bash
-sudo dnf install libnotify python-gobject python3-tkinter python3-GitPython git mpg123 python3-gtts
+$ sudo dnf install libnotify python-gobject python3-tkinter python3-GitPython git mpg123 python3-gtts
 ```
 ### ==========>> DESCARGA Y INSTALACION DE AZUCENA <<==========
 ```bash
 # descargamos el programa en el home
-cd && git clone https://github.com/hero-hz1999yt/azucena.git
+$ cd && git clone https://github.com/hero-hz1999yt/azucena.git
 # lo instalamos con este comando
-./azucena/instalar
+$ ./azucena/instalar
 ```
 
 ## DESINSTALACION
@@ -40,22 +40,22 @@ cd && git clone https://github.com/hero-hz1999yt/azucena.git
 **_--ARCH LINUX Y DERIVADAS--_**
 ```bash
 # este comando solo desinstala las dependencias sin usar, si otro programa las utiliza no se podra desinstalar.
-sudo pacman -R libnotify python-gobject tk python-gitpython git mpg123 python-gtts
+$ sudo pacman -R libnotify python-gobject tk python-gitpython git mpg123 python-gtts
 ```
 **_--UBUNTU Y DERIVADAS--_**
 ```bash
 # este comando solo desinstala las dependencias sin usar, si otro programa las utiliza no se podra desinstalar.
-sudo apt remove libnotify-dev python3-v-sim python3-tk python3-git git mpg123 python3-gtts
+$ sudo apt remove libnotify-dev python3-v-sim python3-tk python3-git git mpg123 python3-gtts
 ```
 
 **_--FEDORA Y DERIVADOS--_**
 ```bash
 # este comando solo desinstala las dependencias sin usar, si otro programa las utiliza no se podra desinstalar.
-sudo dnf remove libnotify python-gobject python3-tkinter python3-GitPython git mpg123 python3-gtts
+$ sudo dnf remove libnotify python-gobject python3-tkinter python3-GitPython git mpg123 python3-gtts
 ```
 ### ==============>> DESINSTALACION DE AZUCENA <<==============
 ```bash
-rm -r ~/.azucena ~/.config/autostart/azucena_autostart.desktop ~/.local/bin/azucena
+$ rm -r ~/.azucena ~/.config/autostart/azucena_autostart.desktop ~/.local/bin/azucena
 ```
 
 ## COMENTARIOS SOBRE LA INSTALACION
@@ -78,11 +78,11 @@ QUE SON LAS MAS UTILIZADAS
 
 **_---->>BASH<<----_**
 ```bash
-nano ~/.bashrc
+$ nano ~/.bashrc
 ```
 **_---->>ZSH<<----_**
 ```bash
-nano ~/.zshrc
+$ nano ~/.zshrc
 ```
 AGREGAMOS ESTE COMANDO EN EL ARCHIVO DE CONFIGURACION 
 ```bash
@@ -92,7 +92,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 PARA FISH EJECUTAREMOS EL SIGUIENTE COMANDO
 ```bash
-nano ~/.config/fish/config.fish
+$ nano ~/.config/fish/config.fish
 ```
 Y AGREGAREMOS EN EL ARCHIVO LA SIGUIENTE FUNCION
 ```bash
@@ -107,19 +107,19 @@ OTRA SOLUCION ES MOVERLA CON EL COMANDO SUDO A UNA RUTA QUE
 SI ESTE AGREGADA EJEMPLO:
 
 ```bash
-sudo mv ~/.local/bin/azucena /usr/local/bin
+$ sudo mv ~/.local/bin/azucena /usr/local/bin
 ```
 O
 
 ```bash
-sudo mv ~/.local/bin/azucena /usr/bin
+$ sudo mv ~/.local/bin/azucena /usr/bin
 ```
 
 LO QUE PUEDEN HACER PARA SABER QUE RUTAS TIENEN AGREGADAS Y ASI SABER
-DONDE COLOCAR A AZUCENA ES IMPRIMIR EN CONSOLA EL CONTENIDO DE ESA VARIABLE CON EL SIGUIENTE COMANDO
+DONDE COLOCAR A AZUCENA ES IMPRIMIR EN CONSOLA EL CONTENIDO DE LA VARIABLE _PATH_ CON EL SIGUIENTE COMANDO
 
 ```bash
-echo $PATH
+$ echo $PATH
 ```
 Y LES MOSTRARA TODAS LAS RUTAS, SOLO ELIJEN LA QUE USTEDES QUIERAN
 
