@@ -64,7 +64,7 @@ rm -r ~/.azucena ~/.config/autostart/azucena_autostart.desktop ~/.local/bin/azuc
 PARA QUE EL EJECUTABLE FUNCIONE DESDE TU TERMINAL AL ESCRIBIR EL NOMBRE
 DEL PROGRAMA EJEMPLO:
 ```bash
-azucena
+$ azucena
 ```
 DEBES DE TENER AGREGADA LA DIRECCION '_/home/nombre_usuario/.local/bin_' EN
 TU VARIABLE DE ENTORNO '_PATH_', SI NO LA TIENES AGREGADA POR DEFECTO NO 
