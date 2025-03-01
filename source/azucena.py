@@ -26,11 +26,12 @@ from random import randrange
 from sys import exit                
 from subprocess import check_output 
 from subprocess import Popen
+from gtts import gTTS
 
 # -- CONSTANTES --
 DIRECTORIO_RAIZ = "/home/" + environ.get('USER') + "/.azucena"
 DIRECTORIO_DE_SONIDOS = "/home/" + environ.get('USER') + "/.azucena/sonidos"
-PARAMETROS_DE_CONFIGURACION = ["AZUCENA","APARIENCIA", "URGENCIA", "MOSTRAR", "OCULTAR", "APODO", "MMENSAJE", "TMENSAJE", "NMENSAJE", "MAMENSAJE", "TIMBRE"]
+PARAMETROS_DE_CONFIGURACION = ["AZUCENA","APARIENCIA", "URGENCIA", "MOSTRAR", "OCULTAR", "APODO", "MMENSAJE", "TMENSAJE", "NMENSAJE", "MAMENSAJE", "TIMBRE", "TIPO_DE_TIMBRE"]
 ARCHIVO_DE_CONFIGURACION = "/home/" + environ.get('USER') + "/.azucena/azucena.azc"
 NOMBRE_DE_AZUCENA = "Azucena"
 APODO_DE_AZUCENA = "Azucena"
@@ -57,7 +58,8 @@ ESTADO_MENSAJE = "ENAMORADA"
 CANTIDAD_DE_EMOTICONES = 0
 DIRECTORIO_DE_ICONOS = "/home/" + environ.get('USER') + "/.azucena/iconos"
 DIRECTORIO_DE_EMOTICONES = "/home/" + environ.get('USER') + "/.azucena/emoticones"
-TIMBRE_NOTIFICACION = "TRUE"
+TIMBRE_NOTIFICACION = "TRUE" 
+TIPO_DE_TIMBRE="NOTIFICACION" # VOZ: ESTADO BETA.
 DICCIONARIO = [ 
                 "Hola",                                                                                                         # 0                                                                                                                                                                                         
                 "Ups, demasiadas notificaciones en pantalla espera un poco....",                                                # 1
@@ -105,6 +107,7 @@ def existeElArchivoDeConfiguracion():
                 + ""+PARAMETROS_DE_CONFIGURACION[3]+"=0;\n"                                                         # AÑADIMOS EL TIEMPO EN MOSTRAR LA NOTIFICACION
                 + ""+PARAMETROS_DE_CONFIGURACION[4]+"=20;\n"                                                        # AÑADIMOS EL TIEMPO EN OCULTAR LA NOTIFICACION
                 + ""+PARAMETROS_DE_CONFIGURACION[10]+"=TRUE;\n"                                                     # HABILITAMOS EL TIMBRE DE LA NOTIFICACION
+                + ""+PARAMETROS_DE_CONFIGURACION[11]+"=NOTIFICACION;\n"                                             # ELEGIR EL TIPO DE TIMBRE QUE VA A SONAR
                 + "\n"
                 + "# ============================== MIS APODOS =============================\n"
                 + ""+PARAMETROS_DE_CONFIGURACION[5]+"=\""+environ.get('USER')+"\";\n"                               # AÑADIMOS UN APODO AL USUARIO (EL NOMBRE DE USUARIO)
@@ -133,6 +136,7 @@ def leerArchivoDeConfiguracion():
     global LISTA_DE_MENSAJES 
     global LISTA_DE_ESTADOS 
     global TIMBRE_NOTIFICACION
+    global TIPO_DE_TIMBRE
 
     with open (ARCHIVO_DE_CONFIGURACION) as archivo: 
         for linea in archivo: 
@@ -183,6 +187,13 @@ def leerArchivoDeConfiguracion():
                     linea = sub(";\\s+$", "", linea)                 
                     linea = sub("\n", "", linea)                     
                     TIMBRE_NOTIFICACION = linea 
+
+                # TIPO DE TIMBRE
+                if match("^"+PARAMETROS_DE_CONFIGURACION[11]+"=(NOTIFICACION|VOZ);\\s+$", linea): 
+                    linea = sub("^"+PARAMETROS_DE_CONFIGURACION[11]+"=", "", linea)    
+                    linea = sub(";\\s+$", "", linea)                 
+                    linea = sub("\n", "", linea)                     
+                    TIPO_DE_TIMBRE = linea
 
                 # MIS APODOS CONFIGURADOS
                 if match("^"+PARAMETROS_DE_CONFIGURACION[5]+"=\"[!-ÿ\\s]+\";\\s+$", linea):
@@ -348,8 +359,20 @@ except Exception as error:
     messagebox.showerror(DICCIONARIO[11], str(error))
     exit()
 
-if TIMBRE_NOTIFICACION== "TRUE" and path.exists(DIRECTORIO_DE_SONIDOS + "/notificacion.mp3"):
-    audio = Popen("mpg123 "+DIRECTORIO_DE_SONIDOS + "/notificacion.mp3 &> /dev/null", shell=True)
+if TIMBRE_NOTIFICACION== "TRUE":
+    # Timbre de notificacion 
+    audio = None
+    if TIPO_DE_TIMBRE == "NOTIFICACION":
+        audio = "notificacion.mp3"
+
+    # Timbre de voz ojo este codigo es beta aun, siento que todavia se puede mejorar sensualmente 
+    elif TIPO_DE_TIMBRE == "VOZ":
+        texto = TITULO_NOTIFICACION + "," + MENSAJE_NOTIFICACION 
+        audio = "voz.mp3"
+        tts = gTTS(texto, tld="com.mx", lang="es", slow=False)
+        tts.save(DIRECTORIO_DE_SONIDOS + "/" + audio)
+
+    reproducir = Popen("mpg123 " + DIRECTORIO_DE_SONIDOS + "/" + audio + " &> /dev/null", shell=True)
 
 # -- LOOP PRINCIPAL --
 try: 
