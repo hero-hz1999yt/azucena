@@ -1,6 +1,10 @@
 
 # AZUCENA
-![](/imagenes/azucena.png)
+
+<p align="center">
+  <img src="/imagenes/azucena.jpg" alt="Sublime's custom image"/>
+</p>
+
 **ES UNA NOTIFICACION ALTAMENTE PERSONALIZABLE CON EL OBJETIVO DE SER UNA PAREJA Y ASISTENTE VIRTUAL PARA LINUX, LLEGANDO A COMPETIR CON SIRI Y CORTANA.**
 
 ## AUTOR
