@@ -16,15 +16,15 @@
 
 **_--ARCH LINUX Y DERIVADAS--_**
 ```bash
-sudo pacman -S libnotify python-gobject tk python-gitpython git mpg123
+sudo pacman -S --needed libnotify python-gobject tk python-gitpython git mpg123 python-gtts
 ```
 **_--UBUNTU Y DERIVADAS--_**
 ```bash
-sudo apt install libnotify-dev python3-v-sim python3-tk python3-git git mpg123
+sudo apt install libnotify-dev python3-v-sim python3-tk python3-git git mpg123 python3-gtts
 ```
 **_--FEDORA Y DERIVADOS--_**
 ```bash
-sudo dnf install libnotify python-gobject python3-tkinter python3-GitPython git mpg123
+sudo dnf install libnotify python-gobject python3-tkinter python3-GitPython git mpg123 python3-gtts
 ```
 ### ==========>> DESCARGA Y INSTALACION DE AZUCENA <<==========
 ```bash
@@ -39,16 +39,19 @@ cd && git clone https://github.com/hero-hz1999yt/azucena.git
 
 **_--ARCH LINUX Y DERIVADAS--_**
 ```bash
-sudo pacman -Rsn libnotify python-gobject tk python-gitpython git mpg123
+# este comando solo desinstala las dependencias sin usar, si otro programa las utiliza no se podra desinstalar.
+sudo pacman -R libnotify python-gobject tk python-gitpython git mpg123 python-gtts
 ```
 **_--UBUNTU Y DERIVADAS--_**
 ```bash
-sudo apt remove libnotify-dev python3-v-sim python3-tk python3-git git mpg123
+# este comando solo desinstala las dependencias sin usar, si otro programa las utiliza no se podra desinstalar.
+sudo apt remove libnotify-dev python3-v-sim python3-tk python3-git git mpg123 python3-gtts
 ```
 
 **_--FEDORA Y DERIVADOS--_**
 ```bash
-sudo dnf remove libnotify python-gobject python3-tkinter python3-GitPython git mpg123
+# este comando solo desinstala las dependencias sin usar, si otro programa las utiliza no se podra desinstalar.
+sudo dnf remove libnotify python-gobject python3-tkinter python3-GitPython git mpg123 python3-gtts
 ```
 ### ==============>> DESINSTALACION DE AZUCENA <<==============
 ```bash
